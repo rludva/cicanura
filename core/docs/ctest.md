@@ -60,7 +60,7 @@ Přehled funkcí:
 
 ## int ctest_open();
 Funkce pro otevření datových struktur aplikačního frameworku C Test a jejich inicializaci.
-Je třeby vždy před použitím funkcí z tohoto API volat na začátku programu tuto funkci.
+Je třeba vždy před použitím funkcí z tohoto API volat na začátku programu tuto funkci.
 Obvykle je použita v běhovém procesoru, který spouští jednotlivé testy, tzv. test_runner.
 
 V případě úspěchu a správné alokace paměti pro všechny datové struktury vrací 0.
