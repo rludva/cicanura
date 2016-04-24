@@ -94,7 +94,7 @@ clean:
 	@for soubor in \
 		./core/test/test_strings.o \
 		./core/source/strings.o \
-		./core/test/test_collection.o .\
+		./core/test/test_collection.o \
 		./core/source/collection.o \
 		./core/test/test_ctest.o \
 		./core/source/ctest.o \
