@@ -291,6 +291,26 @@ int ctest_assert_true(int avalue, char *message)
 }
 
 ///
+int ctest_assert_false(int avalue, char *message)
+{
+	//
+	if(avalue == FALSE)
+	{
+		// Přidej další instanci testu..
+		ctest_test_assert_add(TEST_PASS, message);
+
+		//
+		return 0;
+	}
+
+	// Přidej další instanci testu..
+	ctest_test_assert_add(TEST_FAIL, message);
+
+	//
+	return -1;
+}
+
+///
 int ctest_assert_zero(int avalue, char *message)
 {
 	//

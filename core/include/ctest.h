@@ -41,6 +41,7 @@ int ctest_assert_pass(char *message);
 
 //
 int ctest_assert_true(int avalue, char *message);
+int ctest_assert_false(int avalue, char *message);
 int ctest_assert_zero(int avalue, char *message);
 int ctest_assert_null(void *avalue, char *message);
 int ctest_assert_ptr(void *avalue, char *message);
