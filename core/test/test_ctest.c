@@ -14,7 +14,7 @@ int test_ctest_01()
 }
 
 ///
-void test_ctest_assert_true()
+int test_ctest_assert_true()
 {
 	//
 	int value = TRUE;
@@ -27,7 +27,7 @@ void test_ctest_assert_true()
 }
 
 ///
-void test_ctest_assert_false()
+int test_ctest_assert_false()
 {
 	//
 	int value = FALSE;
