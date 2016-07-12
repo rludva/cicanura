@@ -2,8 +2,30 @@
 # Simple Makefile for my Bunkai C with Cicanura Application Framework for C
 #
 
+all: pre-build main-build
+
+pre-build:
+	@echo ">>> PRE BUILD <<<"
+
+post-build:
+	@echo ">>> POST BUILD <<<"
+	$(MAKE) --no-print-directory tests
+
+main-build: target
+	@$(MAKE) --no-print-directory post-build
+
+# Run tests, just and only test runner!
+tests: 
+	@if [ ! -e ./test_runner/test_runner ]; \
+	then \
+		echo "Error: ./test_runner/test_runner is not exist!"; \
+		echo ""; \
+	fi
+
+	@./test_runner/test_runner
+
 # Target for test_runner..
-test: \
+target: \
 	./bunkai_01/test/test_bunkai_ichi.o \
 	./bunkai_01/bunkai_ichi.o \
 	./core/test/test_collection.o \
@@ -15,9 +37,9 @@ test: \
 	./test_runner/test_runner.o 
 	
 	# Remove test_runner if exists..
-	@if [ -e ./output/test_runner ]; \
+	@if [ -e ./test_runner/test_runner ]; \
 	then \
-		rm ./output/test_runner; \
+		rm ./test_runner/test_runner; \
 	fi
 
 	# Build test_runner..
@@ -31,9 +53,6 @@ test: \
 		./core/test/test_ctest.o \
 		./core/source/ctest.o \
 		./test_runner/test_runner.o
-
-	# Run test..
-	@./test_runner/test_runner
 
 # Tests for the C Test Framework..
 ./core/test/test_ctest.o: \
